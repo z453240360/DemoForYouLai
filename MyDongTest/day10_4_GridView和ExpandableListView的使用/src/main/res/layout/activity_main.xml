@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ge.MainActivity" >
+
+    <!--
+    android:numColumns  用于设置网格中的列数
+    可填的属性值：
+    1. 直接填任意数字
+    2. 使用auto—fit
+    当只使用此属性值时，GridView的列数为2列
+   如果配合android:columnWidth属性设置列宽使用的话，那么auto-fit代表自适应，即能放几列方几列
+   
+   android:horizontalSpacing=""   设置水平间距，即列间距
+        android:verticalSpacing="" 设置垂直间距，即行间距
+        
+        android:stretchMode  剩余空间的分配模式
+        作用：如果屏幕宽为720，每列的宽为100，当前有3列，列间距为10， 放置完内容后剩余400的宽度
+        属性值：spacingWidth  将这400的宽度平均分配给列间距，即列间距会变为210
+        columnWidth  将这400的宽度平均分配给列宽，即列宽会变为2百多
+        
+      -->
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:id="@+id/gv"/>
+
+</RelativeLayout>

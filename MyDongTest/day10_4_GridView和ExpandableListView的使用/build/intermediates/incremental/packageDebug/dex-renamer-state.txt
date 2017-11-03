@@ -1,0 +1,4 @@
+#Fri Nov 03 09:55:17 CST 2017
+base.0=D\:\\androidstudio_project\\MyDongTest\\day10_4_GridView和ExpandableListView的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\androidstudio_project\\MyDongTest\\day10_4_GridView和ExpandableListView的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

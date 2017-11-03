@@ -1,0 +1,226 @@
+package com.yl.crazy.mydongtest.ShoppingCar;
+
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.yl.crazy.mydongtest.R;
+import com.yl.crazy.mydongtest.bean.CarBean;
+import com.yl.crazy.mydongtest.callBack.IAddCarBack;
+import com.yl.crazy.mydongtest.utils.CatUtils;
+import com.yl.crazy.mydongtest.view.MyRecylerview2;
+import com.yl.crazy.mydongtest.view.ShoppingCarChildView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.yl.crazy.mydongtest.R.id.checkBox;
+import static com.yl.crazy.mydongtest.R.id.minPay;
+import static com.yl.crazy.mydongtest.R.id.postMoney;
+import static com.yl.crazy.mydongtest.R.id.shopName;
+
+public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyViewHolder> {
+    private List<ShoppingCarBean.DataBeanX.DataBean> mDatas = new ArrayList<>();
+    private Context mContext;
+    private LayoutInflater mInflater;
+
+    public ShoppingAdapter(Context context, List<ShoppingCarBean.DataBeanX.DataBean> datas) {
+        this.mInflater = LayoutInflater.from(context);
+        this.mDatas = datas;
+        this.mContext = context;
+    }
+
+    @Override
+    public int getItemCount() {
+        return mDatas == null ? 0 : mDatas.size();
+    }
+
+    //初始化布局,创建ViewHolder
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = mInflater.inflate(R.layout.test_item3, parent, false);
+        MyViewHolder myViewHolder = new MyViewHolder(view);
+        return myViewHolder;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    @Override
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
+
+        final int goods_id = mDatas.get(position).getGoods_id();
+        final int spec_id = mDatas.get(position).getSpec().getSpec_id();
+
+        holder.mTxt_title.setText(mDatas.get(position).getGoods_name());//商品名称
+        holder.mTxt_danwei.setText(mDatas.get(position).getSpec().getRatio());
+        holder.mTxt_money.setText(mDatas.get(position).getGoods_price());//商品价格
+        holder.mTxt_number.setText(mDatas.get(position).getSpec().getCart_goods_num()+"");//商品数量
+        //商品图片
+        Glide.with(mContext).load(mDatas.get(position).getGoods_cover()).into(holder.mImg_goods);
+
+        List<ShoppingCarBean.DataBeanX.DataBean.SpecBean> goods_spec = mDatas.get(position).getGoods_spec();
+
+        if (goods_spec.size()==0){
+            holder.mBtn_guige.setVisibility(View.INVISIBLE);
+        }else {
+            holder.mBtn_guige.setVisibility(View.VISIBLE);
+            for (int i = 0; i < goods_spec.size(); i++) {
+                goods_spec.get(i).setGoods_id(goods_id);
+            }
+        }
+
+        //设置子列表的数据
+        holder.list.setDatas(goods_spec,position);
+
+
+
+        //设置规格箭头指向
+        if (mDatas.get(position).isShow()){
+            holder.list.setVisibility(View.VISIBLE);
+            Drawable top = mContext.getResources().getDrawable(R.mipmap.shang);
+
+            top.setBounds(0, 0, 20, 20);
+            holder.mBtn_guige.setCompoundDrawables(null,null,top,null);
+        }else {
+            Drawable top = mContext.getResources().getDrawable(R.mipmap.xia);
+            top.setBounds(0, 0, 20, 20);
+            holder.mBtn_guige.setCompoundDrawables(null,null,top,null);
+            holder.list.setVisibility(View.GONE);
+        }
+
+
+        //规格选择按钮，打开还是收起
+        holder.mBtn_guige.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mDatas.get(position).isShow()){
+                    holder.list.setVisibility(View.VISIBLE);
+                    mDatas.get(position).setShow(false);
+                    notifyDataSetChanged();
+                }else {
+                    holder.list.setVisibility(View.INVISIBLE);
+                    mDatas.get(position).setShow(true);
+                    notifyDataSetChanged();
+                }
+            }
+        });
+
+
+        //购物车数量增加
+        holder.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.add.setClickable(false);
+                final Integer integer = mDatas.get(position).getSpec().getCart_goods_num();
+                CatUtils.addCar(1, goods_id, spec_id, 1, new IAddCarBack() {
+                    @Override
+                    public void successed(int code) {
+                        int num = integer + 1;
+                        mDatas.get(position).getSpec().setCart_goods_num(num);
+                        holder.mTxt_number.setText(mDatas.get(position).getSpec().getCart_goods_num()+"");
+                        holder.add.setClickable(true);
+                    }
+
+                    @Override
+                    public void failed(String s) {
+                        holder.add.setClickable(true);
+                    }
+                });
+            }
+        });
+
+        //数量减少
+        holder.reduce.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                holder.reduce.setClickable(false);
+                final Integer integer = mDatas.get(position).getSpec().getCart_goods_num();
+                if (integer==0){
+                    return;
+                }
+
+                CatUtils.addCar(1, goods_id, spec_id, 2, new IAddCarBack() {
+                    @Override
+                    public void successed(int code) {
+                        int num = integer - 1;
+                        if (num <= 0) {
+                            mDatas.get(position).getSpec().setCart_goods_num(0);
+                        } else {
+                            mDatas.get(position).getSpec().setCart_goods_num(num);
+                        }
+
+                        holder.reduce.setClickable(true);
+                        holder.mTxt_number.setText(mDatas.get(position).getSpec().getCart_goods_num() + "");
+                    }
+
+                    @Override
+                    public void failed(String s) {
+                        holder.reduce.setClickable(true);
+                    }
+                });
+            }
+        });
+
+
+
+        //数据增加
+        holder.list.setOnAddClicked(new ShoppingCarChildView.OnAddClicked() {
+            @Override
+            public void addClicked(int chiledPostion) {
+                Toast.makeText(mContext, "父"+position+"  子"+chiledPostion+"商品ID"+mDatas.get(position).getGoods_id(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        //数据减少
+        holder.list.setReduceClicked(new ShoppingCarChildView.OnReduceClicked() {
+            @Override
+            public void reduceClicked(int chiledPostion) {
+                Toast.makeText(mContext, "父"+position+"  子"+chiledPostion+"商品ID"+mDatas.get(position).getGoods_id(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        private ShoppingCarChildView list;
+
+        private ImageView mImg_goods, add, reduce;
+        private TextView mTxt_new, mBtn_guige, mTxt_title, mTxt_hot, mTxt_money,mTxt_money2, mTxt_danwei, mTxt_number;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            list = (ShoppingCarChildView) itemView.findViewById(R.id.sssss);
+
+            mImg_goods = (ImageView) itemView.findViewById(R.id.mImg_goods);
+            add = (ImageView) itemView.findViewById(R.id.add);
+            reduce = (ImageView) itemView.findViewById(R.id.reduce);
+            mTxt_new = (TextView) itemView.findViewById(R.id.mTxt_new);
+            mBtn_guige = (TextView) itemView.findViewById(R.id.mBtn_guige);
+            mTxt_title = (TextView) itemView.findViewById(R.id.mTxt_title);
+            mTxt_hot = (TextView) itemView.findViewById(R.id.mTxt_hot);
+            mTxt_money = (TextView) itemView.findViewById(R.id.mTxt_money);
+            mTxt_money2 = (TextView) itemView.findViewById(R.id.mTxt_money2);
+            mTxt_money2.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG); //中划线
+            mTxt_danwei = (TextView) itemView.findViewById(R.id.mTxt_danwei);
+            mTxt_number = (TextView) itemView.findViewById(R.id.mTxt_number);
+        }
+    }
+
+
+}

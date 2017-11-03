@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.crazy.mydongtest.expandableListable.Main3Activity">
+
+
+    <TextView
+        android:id="@+id/totP"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="" />
+
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/isAllSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全选" />
+
+    <Button
+        android:text="去结算"
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ExpandableListView
+        android:id="@+id/expanded_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#808a8a8a"
+        android:dividerHeight="0.5dp"
+        android:groupIndicator="@null"
+        android:scrollbars="none" />
+</LinearLayout>
