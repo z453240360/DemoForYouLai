@@ -27,7 +27,8 @@
         <activity android:name=".expandableListable.Main3Activity" />
         <activity android:name=".activity.ExActivity" />
         <activity android:name=".Test_HeadAndFoot.TestHeadActivity" />
-        <activity android:name=".activity.ShoppingActivity"></activity>
+        <activity android:name=".activity.ShoppingActivity" />
+        <activity android:name=".activity.ShangpingXiangqing"></activity>
     </application>
 
 </manifest>

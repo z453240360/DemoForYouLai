@@ -251,7 +251,7 @@ public class EXpandAdapter extends BaseExpandableListAdapter {
 
                 CatUtils.addCar(1, goods_id, spec_id, 1, new IAddCarBack() {
                     @Override
-                    public void successed(int code) {
+                    public void successed(String code) {
                         String price = mDatas.get(i).getGoods().get(i1).getPrice();
                         double v = Double.parseDouble(price);
                         int goods_num = mDatas.get(i).getGoods().get(i1).getGoods_num();
@@ -292,7 +292,7 @@ public class EXpandAdapter extends BaseExpandableListAdapter {
 
                 CatUtils.addCar(1, goods_id, spec_id, 2, new IAddCarBack() {
                     @Override
-                    public void successed(int code) {
+                    public void successed(String code) {
                         double v = Double.parseDouble(mDatas.get(i).getGoods().get(i1).getPrice());
                         int goods_num = mDatas.get(i).getGoods().get(i1).getGoods_num();
                         if (goods_num <= 0) {

@@ -5,6 +5,6 @@ package com.yl.crazy.mydongtest.callBack;
  */
 
 public interface IAddCarBack {
-    void successed(int code);
+    void successed(String s);
     void failed(String s);
 }

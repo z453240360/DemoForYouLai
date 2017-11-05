@@ -33,13 +33,13 @@ public class CatUtils {
 
             @Override
             public void onSucceed(int what, Response<String> response) {
-                if (response.responseCode() == 200) {
-                    carBack.successed(response.responseCode());
+                if (response.responseCode() != 200) {
+                    carBack.successed(response.responseCode()+"");
                 }else {
                     Gson gson = new Gson();
                     AddCarBean addCarBean = gson.fromJson(response.get().toString(), AddCarBean.class);
                     String msg = addCarBean.getMsg();
-                    carBack.failed(msg);
+                    carBack.successed(response.get().toString());
                 }
             }
 

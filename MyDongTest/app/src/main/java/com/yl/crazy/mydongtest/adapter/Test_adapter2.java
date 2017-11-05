@@ -75,7 +75,7 @@ public class Test_adapter2 extends RecyclerView.Adapter<Test_adapter2.MyViewHold
                 final Integer integer = mDatas.get(position).getGoods_num();
                 CatUtils.addCar(1, goods_id, spec_id, 1, new IAddCarBack() {
                     @Override
-                    public void successed(int code) {
+                    public void successed(String code) {
                         int num = integer + 1;
                         mDatas.get(position).setGoods_num(num);
                         if (callBackData != null) {
@@ -109,7 +109,7 @@ public class Test_adapter2 extends RecyclerView.Adapter<Test_adapter2.MyViewHold
 
                 CatUtils.addCar(1, goods_id, spec_id, 2, new IAddCarBack() {
                     @Override
-                    public void successed(int code) {
+                    public void successed(String code) {
                         int num = integer - 1;
 
                         if (num <= 1) {

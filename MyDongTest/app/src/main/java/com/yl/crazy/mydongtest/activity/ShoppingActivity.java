@@ -1,6 +1,7 @@
 package com.yl.crazy.mydongtest.activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,9 @@ import com.yl.crazy.mydongtest.Constant;
 import com.yl.crazy.mydongtest.R;
 import com.yl.crazy.mydongtest.ShoppingCar.ShoppingAdapter;
 import com.yl.crazy.mydongtest.ShoppingCar.ShoppingCarBean;
+import com.yl.crazy.mydongtest.bean.ProductDetialBean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,9 +74,34 @@ public class ShoppingActivity extends AppCompatActivity {
             }
         });
 
+        adapter3.setClicked(new ShoppingAdapter.OnItemClicked() {
+            @Override
+            public void getDetial(int goods_id) {
+                Intent intent = new Intent(ShoppingActivity.this,ShangpingXiangqing.class);
+                intent.putExtra("goods_id",goods_id);
+                startActivityForResult(intent,100);//请求吗100
+            }
+        });
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode==RESULT_OK){
+
+            if (requestCode==100)
+            {
+                List<ProductDetialBean.DataBean.SpecBean> backData = (List<ProductDetialBean.DataBean.SpecBean>)data.getSerializableExtra("backData");
+                ProductDetialBean.DataBean.SpecBean specBean = backData.get(0);
+                int spec_id = specBean.getSpec_id();
+                adapter3.refish(backData);
+            }
+
+        }
+
+    }
 
     //获取详细的商品列表
     public void getYouBianData(int classId, int classOneId, String state, String orderBy, String storeId, int page, String lng, String lat) {
@@ -97,20 +125,22 @@ public class ShoppingActivity extends AppCompatActivity {
 
             @Override
             public void onSucceed(int what, Response<String> response) {
-
                 Gson gson = new Gson();
+                if (response.responseCode()!=200){
+                    dialog.cancel();
+                    Toast.makeText(ShoppingActivity.this, ""+response.responseCode(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 ShoppingCarBean shoppingCarBean = gson.fromJson(response.get().toString(), ShoppingCarBean.class);
                 int code = shoppingCarBean.getCode();
                 if (code!=200){
+                    Toast.makeText(ShoppingActivity.this, ""+shoppingCarBean.getMsg(), Toast.LENGTH_SHORT).show();
                     dialog.cancel();
-                    return;
                 }
 
-                dialog.cancel();
                 List<ShoppingCarBean.DataBeanX.DataBean> data = shoppingCarBean.getData().getData();
                 allData.addAll(data);
                 adapter3.notifyDataSetChanged();
-
             }
 
             @Override
