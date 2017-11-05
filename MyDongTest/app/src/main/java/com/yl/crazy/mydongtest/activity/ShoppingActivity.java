@@ -1,9 +1,12 @@
 package com.yl.crazy.mydongtest.activity;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -31,6 +34,7 @@ public class ShoppingActivity extends AppCompatActivity {
     private int page =1;
     private ShoppingAdapter adapter3;
     private LinearLayoutManager manager;
+    private Dialog dialog;
     private List<ShoppingCarBean.DataBeanX.DataBean> allData = new ArrayList<>();
 
     @Override
@@ -39,6 +43,8 @@ public class ShoppingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shopping);
         ButterKnife.bind(this);
 
+        dialog = new Dialog(this);
+        dialog.setTitle("正在加载");
         manager = new LinearLayoutManager(this);
         adapter3 = new ShoppingAdapter(this,allData);
         rv.setLayoutManager(manager);
@@ -86,7 +92,7 @@ public class ShoppingActivity extends AppCompatActivity {
         NoHttp.newRequestQueue().add(1, request, new OnResponseListener<String>() {
             @Override
             public void onStart(int what) {
-
+                dialog.show();
             }
 
             @Override
@@ -96,10 +102,11 @@ public class ShoppingActivity extends AppCompatActivity {
                 ShoppingCarBean shoppingCarBean = gson.fromJson(response.get().toString(), ShoppingCarBean.class);
                 int code = shoppingCarBean.getCode();
                 if (code!=200){
+                    dialog.cancel();
                     return;
                 }
 
-
+                dialog.cancel();
                 List<ShoppingCarBean.DataBeanX.DataBean> data = shoppingCarBean.getData().getData();
                 allData.addAll(data);
                 adapter3.notifyDataSetChanged();
@@ -108,10 +115,13 @@ public class ShoppingActivity extends AppCompatActivity {
 
             @Override
             public void onFailed(int what, Response<String> response) {
+                dialog.cancel();
+                Toast.makeText(ShoppingActivity.this, ""+response.get().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFinish(int what) {
+                dialog.cancel();
             }
         });
     }
