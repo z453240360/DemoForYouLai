@@ -47,6 +47,11 @@ public class ShoppingFragment extends Fragment implements IVIew{
     }
 
     @Override
+    public void getThirdDate(String s) {
+
+    }
+
+    @Override
     public void dialogCancel() {
 
     }

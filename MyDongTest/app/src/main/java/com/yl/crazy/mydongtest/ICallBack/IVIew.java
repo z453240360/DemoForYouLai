@@ -8,6 +8,7 @@ public interface IVIew {
     void dialogShow();
     void getFirstData(String s);
     void getSecondDate(String s);
+    void getThirdDate(String s);
     void dialogCancel();
     void showFailed(String s);
 }

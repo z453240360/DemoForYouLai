@@ -47,7 +47,6 @@ public class ShangpingXiangqing extends AppCompatActivity implements IVIew {
         int goods_id = intent.getIntExtra("goods_id", -1);
 
 
-//        present.getProductDetial(Constant.Token, "" + 14578);
         present.getProductDetial(Constant.Token, "" + goods_id);
         adapter = new ProductDetialAdapter(this,allData);
         manager = new LinearLayoutManager(this);
@@ -58,7 +57,6 @@ public class ShangpingXiangqing extends AppCompatActivity implements IVIew {
         adapter.setGetAllDatas(new ProductDetialAdapter.GetAllDatas() {
             @Override
             public void getDates(List<ProductDetialBean.DataBean.SpecBean> mDatas) {
-                Log.i("dd", "getDates: "+mDatas);
                 dongdong.putExtra("backData",(Serializable) (mDatas));
 
             }
@@ -84,11 +82,15 @@ public class ShangpingXiangqing extends AppCompatActivity implements IVIew {
         dongdong.putExtra("backData",(Serializable) (spec));
         allData.addAll(spec);
         adapter.notifyDataSetChanged();
-
     }
 
     @Override
     public void getSecondDate(String s) {
+
+    }
+
+    @Override
+    public void getThirdDate(String s) {
 
     }
 

@@ -104,7 +104,7 @@
                 android:layout_marginLeft="2dp"
                 android:layout_toRightOf="@id/mTxt_money"
                 android:gravity="center_vertical"
-                android:text="100.00"
+                android:text=""
                 android:textSize="10sp" />
 
 
@@ -166,8 +166,9 @@
 
             <ImageView
                 android:id="@+id/add"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:scaleType="fitXY"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="5dp"
                 android:src="@mipmap/jiahao" />
@@ -187,9 +188,10 @@
                 android:text="0" />
 
             <ImageView
+                android:scaleType="fitXY"
                 android:id="@+id/reduce"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignBottom="@id/add"
                 android:layout_alignTop="@id/add"
                 android:layout_toLeftOf="@id/mTxt_number"

@@ -141,12 +141,12 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyView
             }
         });
 
+
         //数量减少
         holder.reduce.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
                 holder.reduce.setClickable(false);
                 final Integer integer = mDatas.get(position).getSpec().getCart_goods_num();
                 if (integer == 0) {
@@ -272,6 +272,5 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyView
             mTxt_number = (TextView) itemView.findViewById(R.id.mTxt_number);
         }
     }
-
 
 }
