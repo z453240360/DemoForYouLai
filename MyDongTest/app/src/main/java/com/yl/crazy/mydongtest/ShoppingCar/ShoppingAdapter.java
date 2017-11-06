@@ -219,30 +219,31 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyView
     //跳转商品详情，获取改变后的数据
     public void refish(List<ProductDetialBean.DataBean.SpecBean> backData) {
         if (backData == null) {
-
+            return;
         }
+
         int goods_id = backData.get(0).getGoods_id();
         for (int i = 0; i < mDatas.size(); i++) {
             if (mDatas.get(i).getGoods_id() == goods_id) {
                 for (int j = 0; j < backData.size(); j++) {
                     int spec_id = backData.get(j).getSpec_id();
                     int cart_goods_num = backData.get(j).getCart_goods_num();
-                    if (j==0){
+                    if (j == 0) {
                         mDatas.get(i).getSpec().setCart_goods_num(cart_goods_num);
-                    }else {
+                    } else {
                         List<ShoppingCarBean.DataBeanX.DataBean.SpecBean> goods_spec = mDatas.get(i).getGoods_spec();
 
                         for (int k = 0; k < goods_spec.size(); k++) {
-                            if (goods_spec.get(k).getSpec_id()==spec_id){
+                            if (goods_spec.get(k).getSpec_id() == spec_id) {
                                 goods_spec.get(k).setCart_goods_num(cart_goods_num);
                             }
                         }
                     }
                 }
-
-                notifyItemChanged(i);
             }
         }
+
+        notifyDataSetChanged();
 
     }
 
