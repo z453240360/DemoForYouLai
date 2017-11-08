@@ -9,6 +9,6 @@ public interface Constant {
     String AreaId = "330782";
 //    String BASE_URL = "http://you.hanchengvip.com/";
 
-    String BASE_URL = "http://app.youlainet.com/";
+    String BASE_URL = "http://you.hanchengvip.com/";
 
 }

@@ -44,6 +44,7 @@ public class ShangpingXiangqing extends AppCompatActivity implements IVIew {
         present = new Present(this);
         intent = getIntent();
         dongdong = new Intent();
+
         int goods_id = intent.getIntExtra("goods_id", -1);
 
 

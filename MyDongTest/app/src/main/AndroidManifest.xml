@@ -28,7 +28,8 @@
         <activity android:name=".activity.ExActivity" />
         <activity android:name=".Test_HeadAndFoot.TestHeadActivity" />
         <activity android:name=".activity.ShoppingActivity" />
-        <activity android:name=".activity.ShangpingXiangqing"></activity>
+        <activity android:name=".activity.ShangpingXiangqing" />
+        <activity android:name=".activity.SucceessedActivity"></activity>
     </application>
 
 </manifest>

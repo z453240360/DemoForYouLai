@@ -10,6 +10,7 @@ import com.yl.crazy.mydongtest.Test_HeadAndFoot.TestHeadActivity;
 import com.yl.crazy.mydongtest.activity.ExActivity;
 import com.yl.crazy.mydongtest.activity.ShangpingXiangqing;
 import com.yl.crazy.mydongtest.activity.ShoppingActivity;
+import com.yl.crazy.mydongtest.activity.SucceessedActivity;
 import com.yl.crazy.mydongtest.activity.TestActivity;
 import com.yl.crazy.mydongtest.expandableListable.Main3Activity;
 import com.yl.crazy.mydongtest.test.MainActivity2;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ShangpingXiangqing.class));
+                startActivity(new Intent(MainActivity.this,SucceessedActivity.class));
             }
         });
     }

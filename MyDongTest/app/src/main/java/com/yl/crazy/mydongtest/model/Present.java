@@ -37,9 +37,9 @@ public class Present {
 
 
     //获取产品详情
-    public void getYouBianData(String token, int classId, int classOneId, String state, String orderBy, String storeId, int page, String lng, String lat) {
+    public void getYouBianData(String token, int classId, String classOneId, String state, String orderBy, String storeId, int page, String lng, String lat,String areaID) {
         view.dialogShow();
-        model.getYouBianData(token, classId, classOneId, state, orderBy, storeId, page, lng, lat, new ICallback() {
+        model.getYouBianData(token, classId, classOneId, state, orderBy, storeId, page, lng, lat,areaID ,new ICallback() {
             @Override
             public void sucessed(String s) {
                 view.getFirstData(s);

@@ -32,26 +32,13 @@ public class ClassTwoAdapter extends RecyclerView.Adapter<ClassTwoAdapter.MyView
     private List<ClassTwoBean.DataBean> mDatas = new ArrayList<>();
     private Context mContext;
     private LayoutInflater mInflater;
-    private Map<Integer,Boolean> map = new HashMap<>();
 
     public ClassTwoAdapter(Context context, List<ClassTwoBean.DataBean> datas) {
         this.mInflater = LayoutInflater.from(context);
         this.mDatas = datas;
         this.mContext = context;
-        initMap();
     }
 
-    private void initMap() {
-        if (mDatas!=null){
-            for (int i = 0; i < mDatas.size(); i++) {
-                if (i==0){
-                    mDatas.get(i).setSelected(true);
-                }else {
-                    mDatas.get(i).setSelected(false);
-                }
-            }
-        }
-    }
 
 
 
@@ -96,9 +83,11 @@ public class ClassTwoAdapter extends RecyclerView.Adapter<ClassTwoAdapter.MyView
 
         if (mDatas.get(position).isSelected()){
             holder.line.setVisibility(View.VISIBLE);
+            holder.classTwo.setTextColor(Color.parseColor("#0073ff"));
             holder.classTwo.setBackgroundColor(Color.parseColor("#ffffff"));
         }else {
             holder.line.setVisibility(View.INVISIBLE);
+            holder.classTwo.setTextColor(Color.parseColor("#000000"));
             holder.classTwo.setBackgroundColor(Color.parseColor("#008a8a8a"));
         }
 

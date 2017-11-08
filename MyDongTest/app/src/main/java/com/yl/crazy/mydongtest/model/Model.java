@@ -28,7 +28,9 @@ import com.yl.crazy.mydongtest.ShoppingCar.ShoppingCarBean;
 import com.yl.crazy.mydongtest.activity.ShoppingActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.R.attr.tag;
 
@@ -75,26 +77,48 @@ public class Model {
     //获取详细的商品列表
     public void getYouBianData(String token,
                                int classId,
-                               int classOneId,
+                               String classOneId,
                                String state,
                                String orderBy,
                                String storeId,
                                int page,
                                String lng,
                                String lat,
+                               String areaId,
                                final ICallback callback) {
 
         Request<String> request = NoHttp.createStringRequest(Constant.BASE_URL + "api/goods");
         request.addHeader("Authorization", token);
-        request.add("classId", classId);//二级分类
-        request.add("page", page);//页码
-        request.add("classOneId", classOneId);//一级分类
-        request.add("areaId", "330782");//区域ID
-        request.add("state", state);//排序类型
-        request.add("orderBy", orderBy);//倒序还是反序
-        request.add("lng", lng);//经度
-        request.add("lat", lat);//维度
-        request.add("storeId", storeId);//商店ID
+        if(!(""+classId).equals("")){
+            request.add("classId", classId);//二级分类
+        }
+        if (!(""+page).equals("")){
+            request.add("page", page);//页码
+        }
+        if (!(""+classOneId).equals("")){
+            request.add("classOneId", classOneId);//一级分类
+        }
+        if (!(""+areaId).equals("")){
+            request.add("areaId", areaId);//区域ID
+        }
+
+        if (!(""+state).equals("")){
+            request.add("state", state);//排序类型
+        }
+        if (!(""+orderBy).equals("")){
+            request.add("orderBy", orderBy);//倒序还是反序
+        }
+        if (!(""+lng).equals("")){
+            request.add("lng", lng);//经度
+        }
+        if (!(""+lat).equals("")){
+            request.add("lat", lat);//维度
+        }
+        if (!(""+storeId).equals("")){
+            request.add("storeId", storeId);//商店ID
+        }
+
+
         NoHttp.newRequestQueue().add(1, request, new OnResponseListener<String>() {
             @Override
             public void onStart(int what) {

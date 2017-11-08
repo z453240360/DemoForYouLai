@@ -30,11 +30,21 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@id/line2" />
 
+
+    <TextView
+        android:id="@+id/line4"
+        android:layout_toRightOf="@id/rc_classTwo"
+
+        android:layout_below="@id/line2"
+        android:background="#508a8a8a"
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent" />
+
     <LinearLayout
         android:id="@+id/ll"
         android:background="#fff"
         android:layout_below="@id/line2"
-        android:layout_toRightOf="@id/rc_classTwo"
+        android:layout_toRightOf="@id/line4"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp">
@@ -98,8 +108,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/line"
-        android:layout_toRightOf="@id/rc_classTwo" />
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/line4" />
 
+    <TextView
+        android:id="@+id/isHasData"
+        android:visibility="gone"
+        android:text="没有数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/rc_classTwo" />
 
 
 

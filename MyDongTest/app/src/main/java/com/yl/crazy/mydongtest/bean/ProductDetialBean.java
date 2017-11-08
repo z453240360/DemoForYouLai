@@ -11,7 +11,7 @@ public class ProductDetialBean implements Serializable{
 
 
     /**
-     * data : {"goods_id":14571,"goods_name":"童子鸡（特级）（6.7元/斤）","store_id":217,"goods_cover":"http://oqv8tlktu.bkt.clouddn.com/8ac443346a141e33ecfc8ca5a3b78334.jpg","goods_subtitle":"","goods_images":["http://oqv8tlktu.bkt.clouddn.com/8ac443346a141e33ecfc8ca5a3b78334.jpg"],"evaluation_count":0,"is_favorites":2,"store":{"store_phone":"0579-89970906"},"cart_num":"39","cart_price":1623.8,"spec":[{"spec_id":14866,"price":"20.00","spec_promo_price":"0.00","ratio":"/只/3斤","cart_goods_num":0}],"comment":""}
+     * data : {"goods_id":8568,"goods_name":"黄小米  500克 农家粗粮五谷杂粮米面粮油","store_id":58,"goods_cover":"http://oqv8tlktu.bkt.clouddn.com/74ca10fd5e6654cc74121441d520046d.jpg","goods_subtitle":"粒粒饱满 粗加工更美味 老人小孩都爱吃","goods_images":["http://oqv8tlktu.bkt.clouddn.com/74ca10fd5e6654cc74121441d520046d.jpg"],"evaluation_count":4,"is_favorites":2,"store":{"store_phone":"17740857397"},"cart_num":"11","cart_price":548.4,"spec":[{"spec_id":13697,"price":"15.00","spec_promo_price":"0.00","ratio":"/袋/500g","cart_goods_num":4},{"spec_id":13698,"price":"129.80","spec_promo_price":"0.00","ratio":"/箱/0袋","cart_goods_num":3}],"comment":{"comment_content":"好评","comment_addtime":"2017-10-25","avatar":"http://oqv8tlktu.bkt.clouddn.com/avatar.jpg","user_nicename":"小丸子"}}
      * msg :
      * code : 200
      */
@@ -46,19 +46,19 @@ public class ProductDetialBean implements Serializable{
 
     public static class DataBean {
         /**
-         * goods_id : 14571
-         * goods_name : 童子鸡（特级）（6.7元/斤）
-         * store_id : 217
-         * goods_cover : http://oqv8tlktu.bkt.clouddn.com/8ac443346a141e33ecfc8ca5a3b78334.jpg
-         * goods_subtitle :
-         * goods_images : ["http://oqv8tlktu.bkt.clouddn.com/8ac443346a141e33ecfc8ca5a3b78334.jpg"]
-         * evaluation_count : 0
+         * goods_id : 8568
+         * goods_name : 黄小米  500克 农家粗粮五谷杂粮米面粮油
+         * store_id : 58
+         * goods_cover : http://oqv8tlktu.bkt.clouddn.com/74ca10fd5e6654cc74121441d520046d.jpg
+         * goods_subtitle : 粒粒饱满 粗加工更美味 老人小孩都爱吃
+         * goods_images : ["http://oqv8tlktu.bkt.clouddn.com/74ca10fd5e6654cc74121441d520046d.jpg"]
+         * evaluation_count : 4
          * is_favorites : 2
-         * store : {"store_phone":"0579-89970906"}
-         * cart_num : 39
-         * cart_price : 1623.8
-         * spec : [{"spec_id":14866,"price":"20.00","spec_promo_price":"0.00","ratio":"/只/3斤","cart_goods_num":0}]
-         * comment :
+         * store : {"store_phone":"17740857397"}
+         * cart_num : 11
+         * cart_price : 548.4
+         * spec : [{"spec_id":13697,"price":"15.00","spec_promo_price":"0.00","ratio":"/袋/500g","cart_goods_num":4},{"spec_id":13698,"price":"129.80","spec_promo_price":"0.00","ratio":"/箱/0袋","cart_goods_num":3}]
+         * comment : {"comment_content":"好评","comment_addtime":"2017-10-25","avatar":"http://oqv8tlktu.bkt.clouddn.com/avatar.jpg","user_nicename":"小丸子"}
          */
 
         private int goods_id;
@@ -71,7 +71,7 @@ public class ProductDetialBean implements Serializable{
         private StoreBean store;
         private String cart_num;
         private double cart_price;
-        private String comment;
+        private CommentBean comment;
         private List<String> goods_images;
         private List<SpecBean> spec;
 
@@ -155,11 +155,11 @@ public class ProductDetialBean implements Serializable{
             this.cart_price = cart_price;
         }
 
-        public String getComment() {
+        public CommentBean getComment() {
             return comment;
         }
 
-        public void setComment(String comment) {
+        public void setComment(CommentBean comment) {
             this.comment = comment;
         }
 
@@ -181,7 +181,7 @@ public class ProductDetialBean implements Serializable{
 
         public static class StoreBean {
             /**
-             * store_phone : 0579-89970906
+             * store_phone : 17740857397
              */
 
             private String store_phone;
@@ -195,13 +195,59 @@ public class ProductDetialBean implements Serializable{
             }
         }
 
+        public static class CommentBean {
+            /**
+             * comment_content : 好评
+             * comment_addtime : 2017-10-25
+             * avatar : http://oqv8tlktu.bkt.clouddn.com/avatar.jpg
+             * user_nicename : 小丸子
+             */
+
+            private String comment_content;
+            private String comment_addtime;
+            private String avatar;
+            private String user_nicename;
+
+            public String getComment_content() {
+                return comment_content;
+            }
+
+            public void setComment_content(String comment_content) {
+                this.comment_content = comment_content;
+            }
+
+            public String getComment_addtime() {
+                return comment_addtime;
+            }
+
+            public void setComment_addtime(String comment_addtime) {
+                this.comment_addtime = comment_addtime;
+            }
+
+            public String getAvatar() {
+                return avatar;
+            }
+
+            public void setAvatar(String avatar) {
+                this.avatar = avatar;
+            }
+
+            public String getUser_nicename() {
+                return user_nicename;
+            }
+
+            public void setUser_nicename(String user_nicename) {
+                this.user_nicename = user_nicename;
+            }
+        }
+
         public static class SpecBean implements Serializable{
             /**
-             * spec_id : 14866
-             * price : 20.00
+             * spec_id : 13697
+             * price : 15.00
              * spec_promo_price : 0.00
-             * ratio : /只/3斤
-             * cart_goods_num : 0
+             * ratio : /袋/500g
+             * cart_goods_num : 4
              */
 
             private int spec_id;

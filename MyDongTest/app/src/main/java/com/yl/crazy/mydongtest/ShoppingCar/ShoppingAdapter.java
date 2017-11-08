@@ -66,21 +66,50 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyView
 
         holder.mTxt_title.setText(mDatas.get(position).getGoods_name());//商品名称
         holder.mTxt_danwei.setText(mDatas.get(position).getSpec().getRatio());
-        holder.mTxt_money.setText(mDatas.get(position).getGoods_price());//商品价格
+
         holder.mTxt_number.setText(mDatas.get(position).getSpec().getCart_goods_num() + "");//商品数量
         //商品图片
         Glide.with(mContext).load(mDatas.get(position).getGoods_cover()).into(holder.mImg_goods);
 
         List<ShoppingCarBean.DataBeanX.DataBean.SpecBean> goods_spec = mDatas.get(position).getGoods_spec();
 
+
+        //选规格按钮是否可见
         if (goods_spec.size() == 0) {
             holder.mBtn_guige.setVisibility(View.INVISIBLE);
         } else {
             holder.mBtn_guige.setVisibility(View.VISIBLE);
+
             for (int i = 0; i < goods_spec.size(); i++) {
                 goods_spec.get(i).setGoods_id(goods_id);
             }
         }
+
+        //判断是否是新品
+        int goods_is_new = mDatas.get(position).getGoods_is_new();
+        if (goods_is_new==1){
+            holder.mTxt_new.setText("新");
+        }else {
+            holder.mTxt_new.setText("");
+        }
+
+
+        //判断是否是促销品
+        int goods_is_promo = mDatas.get(position).getGoods_is_promo();
+        if (goods_is_promo==1){
+            holder.mTxt_hot.setText("促");
+        }else {
+            holder.mTxt_hot.setText("");
+        }
+
+        //判断是不是促销价格
+        if (Double.parseDouble(mDatas.get(position).getSpec().getSpec_promo_price())>0){
+            holder.mTxt_money.setText(mDatas.get(position).getSpec().getSpec_promo_price());//商品价格
+        }else {
+            holder.mTxt_money.setText(mDatas.get(position).getGoods_price());//商品价格
+        }
+
+
 
         //设置子列表的数据
         holder.list.setDatas(goods_spec, position);

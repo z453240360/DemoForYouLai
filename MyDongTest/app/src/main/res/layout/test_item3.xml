@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/mImg_goods"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:scaleType="fitXY"
@@ -38,7 +38,7 @@
                 android:background="#79c831"
                 android:gravity="center"
                 android:padding="0dp"
-                android:text="新"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="12sp" />
 
@@ -75,9 +75,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/line1"
                 android:background="#ffa801"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
                 android:gravity="center"
                 android:padding="0dp"
-                android:text="促"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="12sp" />
 
@@ -89,7 +91,7 @@
                 android:layout_alignBottom="@id/mTxt_hot"
                 android:layout_alignTop="@id/mTxt_hot"
                 android:layout_marginLeft="2dp"
-                android:layout_toRightOf="@id/mTxt_new"
+                android:layout_toRightOf="@id/mTxt_hot"
                 android:gravity="center_vertical"
                 android:text="￥ 100.00"
                 android:textColor="#fb6800"
@@ -155,13 +157,12 @@
 
         <android.support.percent.PercentRelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
 
-            android:layout_toRightOf="@id/rl11"
             android:id="@+id/rl22"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:layout_below="@id/mBtn_guige"
             app:layout_heightPercent="50%"
             android:layout_alignParentRight="true"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp">
 
             <ImageView
