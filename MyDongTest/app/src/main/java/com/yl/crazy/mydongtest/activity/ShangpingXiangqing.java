@@ -47,7 +47,6 @@ public class ShangpingXiangqing extends AppCompatActivity implements IVIew {
 
         int goods_id = intent.getIntExtra("goods_id", -1);
 
-
         present.getProductDetial(Constant.Token, "" + goods_id);
         adapter = new ProductDetialAdapter(this,allData);
         manager = new LinearLayoutManager(this);
