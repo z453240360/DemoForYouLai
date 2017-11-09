@@ -78,11 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SucceessedActivity.class));
             }
         });
-//
-//        Drawable drawable = getResources().getDrawable(R.mipmap.timg);
-//
-//        drawable.setBounds(0,0,50,50);
-//        mImg.setImageDrawable(drawable);
     }
 
 }

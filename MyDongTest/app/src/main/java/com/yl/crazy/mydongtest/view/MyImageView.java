@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
@@ -61,6 +62,22 @@ public class MyImageView extends ImageView {
 
         Bitmap roundBitmap = getCroppedBitmap(bitmap,w);
         canvas.drawBitmap(roundBitmap, 0, 0, null);
+
+
+        Path path = new Path();
+
+        path.moveTo(0,0);
+        path.quadTo(0,0,100,100);
+        path.lineTo(0,0);
+
+        path.close();
+
+        Paint paint = new Paint();
+        paint.setStrokeWidth(10);
+
+        paint.setColor(Color.RED);
+
+        canvas.drawPath(path,paint);
 
     }
 
