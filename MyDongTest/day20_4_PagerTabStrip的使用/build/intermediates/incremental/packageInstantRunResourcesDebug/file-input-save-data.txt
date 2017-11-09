@@ -1,0 +1,27 @@
+#Internal package file, do not edit.
+#Thu Nov 09 11:05:28 CST 2017
+2.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+5.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\f3.xml
+5.set=ANDROID_RESOURCE
+3.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+6.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\f2.xml
+2.set=ANDROID_RESOURCE
+4.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+7.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\f1.xml
+7.set=ANDROID_RESOURCE
+count=8
+0.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu\\main.xml
+5.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+4.set=ANDROID_RESOURCE
+6.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+1.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\ic_launcher.png
+1.set=ANDROID_RESOURCE
+7.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+2.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+6.set=ANDROID_RESOURCE
+0.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+3.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_main.xml
+3.set=ANDROID_RESOURCE
+1.base=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_
+4.file=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+0.set=ANDROID_RESOURCE

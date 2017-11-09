@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.day20_4_pagertabstrip.MainActivity" >
+
+    <!-- 通过ViewPager控制主体内容的显示 -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 通过ViewPager标签之间的PagerTabStrip标签控制书签切换的效果
+          android:layout_gravity 控制书签整体显示在页面顶端还是显示在页面底端
+         -->
+
+        <android.support.v4.view.PagerTabStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:id="@+id/strip"
+            android:layout_gravity="bottom"
+            >
+        </android.support.v4.view.PagerTabStrip>
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

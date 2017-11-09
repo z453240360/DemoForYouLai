@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    api-level="22"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="267058747680219"
+    token="-1356068390186874499"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="80" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="43" />
+    <task
+        name="verifier"
+        duration="7" />
+
+    <artifact
+        location="D:\git_hancheng\DomoForYouLai\MyDongTest\day20_4_PagerTabStrip的使用\build\outputs\apk\day20_4_PagerTabStrip的使用-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="267058747680219"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="D:\git_hancheng\DomoForYouLai\MyDongTest\day20_4_PagerTabStrip的使用\build\outputs\apk\day20_4_PagerTabStrip的使用-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

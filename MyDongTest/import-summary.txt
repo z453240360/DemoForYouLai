@@ -27,10 +27,10 @@ Moved Files:
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => day10_4_GridView和ExpandableListView的使用\src\main\AndroidManifest.xml
-* assets\ => day10_4_GridView和ExpandableListView的使用\src\main\assets
-* res\ => day10_4_GridView和ExpandableListView的使用\src\main\res\
-* src\ => day10_4_GridView和ExpandableListView的使用\src\main\java\
+* AndroidManifest.xml => day20_4_PagerTabStrip的使用\src\main\AndroidManifest.xml
+* assets\ => day20_4_PagerTabStrip的使用\src\main\assets
+* res\ => day20_4_PagerTabStrip的使用\src\main\res\
+* src\ => day20_4_PagerTabStrip的使用\src\main\java\
 
 Missing Android Support Repository:
 -----------------------------------
