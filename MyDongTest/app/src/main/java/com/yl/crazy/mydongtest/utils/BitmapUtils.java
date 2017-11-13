@@ -11,6 +11,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.view.View;
 
 import java.io.InputStream;
 
@@ -130,24 +131,31 @@ public class BitmapUtils {
     }
 
 
-    public static Bitmap getTwoCircleBitmap(Bitmap bitmap,int spuare) {
+    public static Bitmap getTwoCircleBitmap(Bitmap bitmap, View view) {
+
+        int height = bitmap.getHeight();
+        int width = bitmap.getWidth();
 
         //获取一张纯色图片  8888:支持透明，565不支持透明
-        Bitmap bit = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap bit = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         //通过画布保留的内容，会直接保留图片
         Canvas canvas = new Canvas(bit);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setColor(Color.RED);
-        //取图片宽高中比较小的值 的一半作为半径
-        float raduios = bitmap.getWidth()/2>bitmap.getHeight()/2?bitmap.getHeight()/2:bitmap.getWidth()/2;
-        canvas.drawCircle(bitmap.getWidth()/2,bitmap.getHeight()/2,raduios,paint);
 
         Path path = new Path();
-//        path.moveTo();
+        path.moveTo(0,20);
+        path.quadTo(0,0,20,0);
+        path.lineTo(width-20,0);
 
+//        path.moveTo(width-20,0);
+        path.quadTo(width,0,width,20);
+        path.lineTo(width,height);
+        path.lineTo(0,height);
+        path.close();
 
-
+        canvas.drawPath(path,paint);
         //图片的相交保留原则
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         //绘制直角图片

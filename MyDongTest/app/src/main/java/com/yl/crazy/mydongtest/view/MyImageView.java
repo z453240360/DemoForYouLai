@@ -15,6 +15,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import static android.R.attr.width;
+
 /**
  * Created by Administrator on 2017/11/8.
  */
@@ -36,6 +38,8 @@ public class MyImageView extends ImageView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        int height = getHeight();
+        int width = getWidth();
 
         Drawable drawable = getDrawable();
         if (drawable==null){
@@ -51,10 +55,7 @@ public class MyImageView extends ImageView {
         }
 
         Bitmap b =((BitmapDrawable) drawable).getBitmap();
-//
-//        if (null==b){
-//            return;
-//        }
+
 
         Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
 
@@ -64,12 +65,14 @@ public class MyImageView extends ImageView {
         canvas.drawBitmap(roundBitmap, 0, 0, null);
 
 
+
         Path path = new Path();
-
-        path.moveTo(0,0);
-        path.quadTo(0,0,100,100);
-        path.lineTo(0,0);
-
+        path.moveTo(0,50);
+        path.quadTo(0,0,50,0);
+        path.lineTo(width -50,0);
+        path.quadTo(width,0,  width,50);
+        path.lineTo(width,height);
+        path.lineTo(0,height);
         path.close();
 
         Paint paint = new Paint();

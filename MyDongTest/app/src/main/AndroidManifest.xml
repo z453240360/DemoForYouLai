@@ -29,7 +29,12 @@
         <activity android:name=".Test_HeadAndFoot.TestHeadActivity" />
         <activity android:name=".activity.ShoppingActivity" />
         <activity android:name=".activity.ShangpingXiangqing" />
-        <activity android:name=".activity.SucceessedActivity"></activity>
+        <activity android:name=".activity.SucceessedActivity" />
+        <activity android:name=".activity.DesignActivity" />
+        <activity
+            android:name=".activity.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
