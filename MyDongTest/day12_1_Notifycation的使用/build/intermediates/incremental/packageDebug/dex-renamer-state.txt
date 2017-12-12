@@ -1,0 +1,7 @@
+#Thu Nov 16 15:56:15 CST 2017
+base.0=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day12_1_Notifycation的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5f8bf590db770ac1103d543e8f87ce0fa8d1f6a3
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day12_1_Notifycation的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_48b4934ed7b87ff3f48c4f8cae66a5671ac9dd0b\\classes.dex
+base.1=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day12_1_Notifycation的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_48b4934ed7b87ff3f48c4f8cae66a5671ac9dd0b
+file.0=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day12_1_Notifycation的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5f8bf590db770ac1103d543e8f87ce0fa8d1f6a3\\classes.dex

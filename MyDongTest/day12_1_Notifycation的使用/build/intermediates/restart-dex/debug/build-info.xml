@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    api-level="22"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="24994424000502"
+    token="-8112453339017163703"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="84" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="102" />
+    <task
+        name="verifier"
+        duration="8" />
+
+    <artifact
+        location="D:\git_hancheng\DomoForYouLai\MyDongTest\day12_1_Notifycation的使用\build\outputs\apk\day12_1_Notifycation的使用-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="24994424000502"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="D:\git_hancheng\DomoForYouLai\MyDongTest\day12_1_Notifycation的使用\build\outputs\apk\day12_1_Notifycation的使用-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

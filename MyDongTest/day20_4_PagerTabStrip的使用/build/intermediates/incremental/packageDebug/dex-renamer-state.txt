@@ -1,7 +1,0 @@
-#Thu Nov 09 11:05:30 CST 2017
-base.0=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c5b0310065de3176f994ebe2e7987868e6d73aa1
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_771af9dd9d24963b7622741ef836378847cb823f\\classes.dex
-base.1=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_771af9dd9d24963b7622741ef836378847cb823f
-file.0=D\:\\git_hancheng\\DomoForYouLai\\MyDongTest\\day20_4_PagerTabStrip的使用\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c5b0310065de3176f994ebe2e7987868e6d73aa1\\classes.dex

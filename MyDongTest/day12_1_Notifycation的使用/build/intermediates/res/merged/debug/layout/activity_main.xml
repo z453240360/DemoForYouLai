@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.day12_1_notifycation.MainActivity" >
+    
+    
+    <Button
+        android:id="@+id/but_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:onClick="click"
+        android:text="发送普通Notifycation" />
+
+    <Button
+        android:id="@+id/but_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="取消通知信息的显示" />
+
+    <Button
+        android:id="@+id/but_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:onClick="click"
+        android:text="带进度条的通知" />
+
+    <Button
+        android:id="@+id/but_big"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:onClick="click"
+        android:text="超大图片的通知" />
+
+    <Button
+        android:id="@+id/but_multi_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:onClick="click"
+        android:text="多行文本的通知" />
+
+    <Button
+        android:id="@+id/but_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:onClick="click"
+        android:text="完全自定义显示内容的通知" />
+
+    <Button
+        android:id="@+id/but_high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="自定义超高内容的通知" />
+
+</LinearLayout>
